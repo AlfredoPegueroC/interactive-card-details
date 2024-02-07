@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>Frontend Mentor | Interactive card details form</title>
+
+    <!-- Feel free to remove these styles or customize in your own stylesheet 👍 -->
+  </head>
+  <body class="flex-content">
+    <div class="container flex-content">
+      <div class="card flex-content">
+        <section class="card-front">
+          <img
+            src="./images/bg-card-front.png"
+            alt="card-front"
+            aria-hidden="true"
+          />
+          <p class="card-number">0000 0000 0000 0000</p>
+          <p class="card-name">Jane Appleseed</p>
+          <p class="card-expired-date">
+            <span class="month"> 00</span>/<span class="year">00</span>
+          </p>
+
+          <img
+            src="./images/card-logo.svg"
+            class="card-logo"
+            alt="card-logo"
+            aria-hidden="true"
+          />
+        </section>
+        <section class="card-back">
+          <img
+            src="./images/bg-card-back.png"
+            alt="card-back"
+            aria-hidden="true"
+          />
+          <span class="cvc-number">000</span>
+        </section>
+      </div>
+
+      <div class="left-side">
+        <form class="form-content flex-content" id="form">
+          <label id="labelName">
+            Cardholder Name
+            <input
+              type="text"
+              placeholder="e.g. Jane Appleseed"
+              id="card-name"
+              maxlength="25"
+              autocomplete="off"
+            />
+          </label>
+          <label id="numberLabel">
+            Card Number
+            <input
+              type="number"
+              name="card-number"
+              id="card-number"
+              placeholder="e.g. 1234 5678 9123 0000"
+              minlength="16"
+              maxlength="16"
+              autocomplete="off"
+            />
+          </label>
+
+          <div class="number-area flex-content">
+            <fieldset id="dateLabel" class="date-area flex-content">
+              <legend>Exp. Date (MM/YY)</legend>
+              <input
+                type="number"
+                name="month"
+                id="month"
+                placeholder="MM"
+                autocomplete="off"
+                min="1"
+                max="12"
+                maxlength="2"
+              />
+              <input
+                type="number"
+                name="year"
+                id="year"
+                placeholder="YY"
+                autocomplete="off"
+                min="1"
+                maxlength="3"
+              />
+            </fieldset>
+
+            <label id="labelcvc">
+              CVC
+              <input
+                type="number"
+                name="cvc"
+                id="cvc"
+                autocomplete="off"
+                minlength="3"
+                maxlength="3"
+                placeholder="e.g. 123 Confirm"
+              />
+            </label>
+          </div>
+          <button class="btn" id="btn" type="submit">Confirm</button>
+        </form>
+      </div>
+
+      <div class="final-state flex-content hidden" id="final-state">
+        <img src="./images/icon-complete.svg" alt="" aria-hidden="true" />
+
+        <div class="complete flex-content">
+          <h1>Thank you!</h1>
+          <p>We've added your card details</p>
+        </div>
+
+        <button class="btn">Continue</button>
+      </div>
+    </div>
+
+    <script src="./app.js"></script>
+    <!-- Completed state start -->
+
+    <!-- 
+ 
+  Continue
+   -->
+    <!-- <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="#">Your Name Here</a>.
+  </div> -->
+  </body>
+</html>

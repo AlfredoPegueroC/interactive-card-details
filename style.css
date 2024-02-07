@@ -1,0 +1,255 @@
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500&display=swap");
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  position: relative;
+  font-family: "Space Grotesk", sans-serif;
+  background-image: url("./images/bg-main-desktop.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  min-height: 100vh;
+  min-height: 100svh;
+  max-width: 1440px;
+}
+
+/* HIDE DEFAULT STYLE OF BROWSER FOR INPUT NUMBER */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+input[type="number"] {
+  appearance: textfield;
+}
+
+/* END */
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+.flex-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.card {
+  flex-direction: column;
+  transform: translateX(15%);
+}
+.card .card-front {
+  position: relative;
+  transform: translateX(-13.5em) translateY(-1em);
+}
+.card .card-front .card-number {
+  position: absolute;
+  font-size: 1.8rem;
+  width: 100%;
+  transform: translate(1.85rem, -7rem);
+  color: hsl(0, 0%, 100%);
+  letter-spacing: 3px;
+}
+.card .card-front .card-name {
+  position: absolute;
+  color: hsl(0, 0%, 100%);
+  width: 100%;
+  transform: translate(1.75rem, -3.125rem);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+.card .card-front .card-expired-date {
+  position: absolute;
+  transform: translate(22.6rem, -3.125rem);
+  color: hsl(0, 0%, 100%);
+}
+.card .card-front .card-logo {
+  display: block;
+  position: absolute;
+  transform: translate(1.75rem, -13.9rem);
+}
+
+.card .card-back {
+  position: relative;
+
+  transform: translateX(-7.2rem) translateY(1.125rem);
+}
+.card .card-back .cvc-number {
+  position: absolute;
+  transform: translate(22.5rem, -8.4rem);
+  color: hsl(0, 0%, 100%);
+  font-size: 14px;
+  letter-spacing: 2px;
+}
+
+.form-content {
+  max-width: 400px;
+  flex-direction: column;
+  gap: 30px;
+  transform: translateX(5rem);
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  font-size: 12px;
+}
+.form-content label {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.form-content label input,
+.date-area input {
+  border: 1px solid hsla(0, 3%, 12%, 0.288);
+  padding: 15px;
+  width: 23.5rem;
+  margin-top: 5px;
+  border-radius: 5px;
+}
+
+.number-area {
+  gap: 20px;
+}
+.number-area label input {
+  width: 205px;
+}
+.form-content label input::placeholder,
+.number-area label input::placeholder,
+.date-area input::placeholder {
+  font-size: 16px;
+  font-weight: 500;
+  font-family: "Space Grotesk", sans-serif;
+}
+
+.date-area {
+  position: relative;
+  gap: 10px;
+  border: none;
+}
+
+.date-area input {
+  padding: 12px;
+  width: 70px;
+}
+
+.btn {
+  font-family: "Space Grotesk", sans-serif;
+  cursor: pointer;
+  border: none;
+  border-radius: 10px;
+  padding: 20px;
+  width: 100%;
+  background: hsl(278, 68%, 11%);
+  color: white;
+  font-weight: 400;
+  letter-spacing: 1.5px;
+}
+
+/* FINAL STATE */
+.final-state {
+  display: none;
+  max-width: 400px;
+  flex-direction: column;
+  margin-left: 10rem;
+  gap: 30px;
+  justify-content: center;
+}
+.final-state .complete {
+  flex-direction: column;
+}
+.final-state h1 {
+  margin-bottom: 20px;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+.final-state p {
+  color: hsla(0, 0%, 0%, 0.5);
+  font-size: 1.125rem;
+}
+
+/* ERROR MESSAGES */
+.show-err{
+  outline: 1px solid hsl(0, 100%, 66%);
+}
+.err-number-only::after{
+  
+  content: "Wrong format, numbers only";
+   position: absolute;
+   font-size: 0.6rem;
+   top: 110%;
+   left: 0;
+   color: hsl(0, 100%, 66%);
+}
+.err-message::after{
+  content: "can't blank";
+   position: absolute;
+   top: 110%;
+   left: 0;
+   color: hsl(0, 100%, 66%);
+}
+
+/* MOBILE QUERIES */
+
+@media (max-width: 1000px) {
+  body {
+    background-image: url("./images/bg-main-mobile.png");
+  }
+  .container {
+    flex-direction: column;
+    max-width: 375px;
+  }
+
+  .form-content {
+    margin-top: -50px;
+    padding: 20px;
+    max-width: 375px;
+    transform: translateX(-0.5rem);
+  }
+  .form-content label input {
+    width: 19rem;
+  }
+  .number-area label input {
+    width: 130px;
+  }
+
+  .card .card-front,
+  .card .card-back {
+    width: 75%;
+  }
+  .card .card-front {
+    transform: translate(-5.2rem, 0.5rem);
+    z-index: 10;
+  }
+  .card .card-front .card-number {
+    font-size: 1.05rem;
+    transform: translate(1rem, -4.5rem);
+  }
+  .card .card-front .card-name {
+    font-size: 0.6rem;
+    transform: translate(1rem, -2rem);
+  }
+  .card .card-front .card-expired-date {
+    font-size: 0.6rem;
+    transform: translate(14rem, -2rem);
+  }
+  .card .card-front .card-logo {
+    width: 20%;
+    transform: translate(1rem, -8.5rem);
+  }
+  .card .card-back {
+    transform: translate(-2rem, -15rem);
+  }
+  .card .card-back .cvc-number {
+    transform: translate(14rem, -5.4rem);
+    font-size: 0.75rem;
+  }
+  .final-state{
+   margin-left: 0;
+  }
+}
